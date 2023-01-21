@@ -1,0 +1,15 @@
+<?php
+
+include_once("connexion.php");
+session_start();
+
+
+$query = $conn->prepare("DELETE FROM USERS WHERE ID = '" . $_GET['id'] . "' ");
+$query->execute();
+
+?>
+
+<script type="text/javascript">
+    alert("The user has been successfully deleted");
+    window.location = "http://127.0.0.1/bdd-oa/users.php";
+</script>
